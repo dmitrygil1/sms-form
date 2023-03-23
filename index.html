@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Форма</title>
+</head>
+
+<body>
+    <div style="max-width: 375px; margin: 0px auto; padding: 41px 30px 0;">
+        <div class="mobile-donation">
+            <span class="form-caption">Как сделать пожертвование?</span>
+            <div class="form-item type-1">
+                <form action="#">
+                    <span class="title">Способ 1</span>
+                    <span class="subtitle">Отправить СМС на номер <b>3434</b> с текстом: <b>БФПомощь 500</b></span>
+                    <div>
+                        <div class="form-wrap">
+                            <div class="item">
+                                <label>
+                                    <input type="radio" name="sum" value="300 ₽">
+                                    <span>300 ₽</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <label>
+                                    <input type="radio" name="sum" value="500 ₽">
+                                    <span>500 ₽</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <label>
+                                    <input type="radio" name="sum" value="1000 ₽">
+                                    <span>1000 ₽</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <label>
+                                    <input type="radio" name="sum" value="3000 ₽">
+                                    <span>3000 ₽</span>
+                                </label>
+                            </div>
+                            <div class="item lg">
+                                <label>
+                                    <input class="field" type="number" inputmode="numeric" pattern="[0-9]*"
+                                        name="custom-sum" placeholder="Другая сумма">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="form-button">Оплатить</button>
+                </form>
+            </div>
+            <div class="form-item type-2">
+                <form action="#">
+                    <span class="title">Способ 2</span>
+                    <div>
+                        <div class="form-wrap">
+                            <div class="item">
+                                <label>
+                                    <input type="number" pattern="[0-9]*" name="amount" placeholder="500 ₽">
+                                </label>
+                            </div>
+                            <div class="item">
+                                <label>
+                                    <input type="tel" name="user_phone" placeholder="Телефон">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="form-button">Оплатить</button>
+                </form>
+            </div>
+            <ul class="form-notes">
+                <li><b>*ВНИМАНИЕ!</b> Нужно ОБЯЗАТЕЛЬНО подтвердить отправленное СМС</li>
+                <li>*500 — это сумма перевода (от 10 до 15 000 руб. только для РФ)</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let field = document.querySelector('.mobile-donation .field');
+
+        field.addEventListener('focus', function () {
+            let radio = document.querySelector('.mobile-donation input[type="radio"]:checked');
+
+            if (radio) 
+                radio.checked = false;
+        });
+    </script>
+</body>
+
+</html>
